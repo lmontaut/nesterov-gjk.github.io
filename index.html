@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Collision Detection Accelerated: An Optimization Perspective">
+    <meta name="author" content="WILLOW team - IMPACT team">
+
+    <title>Collision Detection Accelerated: An Optimization Perspective</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+
+
+      <div class="container">
+          <div class="header">
+          </div>
+          <div class="header">
+              <center>
+                  <h1> <b> Collision Detection Accelerated: An Optimization Perspective  </b> </h1>
+                  <ul class="list-inline authors">
+                      <li><a href="http://lmontaut.github.io">Louis Montaut</li>
+                      <li><a href="https://quentinll.github.io/">Quentin Le Lidec</li>
+                      <li><a href="https://petrikvladimir.github.io/">Vladimir Petrik</a></li>
+                      <li><a href="http://www.di.ens.fr/~josef/">Josef Sivic</a></li>
+                      <li><a href="https://jcarpent.github.io/">Justin Carpentier</a></li>
+                  </ul>
+              </center>
+              <center>
+                  <h3>  Robotics: Science and Systems, 2022 </h3>
+              </center>
+              <center>
+              <h3>
+                  <a href="https://arxiv.org/abs/2205.09663">[Paper]</a>
+                  <a href="https://github.com/lmontaut/collision-detection-benchmark">[Code]</a>
+                  <!-- <a href="https://youtu.be/xxxx">[Video (5 min)]</a> -->
+                  <!-- <a href="">[Supplementary Video]</a> -->
+                  <!-- <a href="https://docs.google.com/presentation/d/xxxxx">[Slides]</a> -->
+              </h3>
+              </center>
+          </div>
+      </div>
+
+    <div class="container">
+        <center>
+            <img class="img-responsive"  src="images/website-teaser.png" title="numit_and_timings"/>
+        </center>
+        <h4>
+            <b> Nesterov-accelerated GJK vs. vanilla GJK on the ShapeNet benchmark. </b> The ShapeNet benchmark is made of ~1000 meshes for a total of 12 millions collision problems. We compare both the number of iterations and timings of our approach, Nesterov-accelerated GJK and the vanilla GJK algorithm (y-axis). The x-axis represents the distance between the objects. Our results show that Nesterov-accelerated GJK is up to two times faster than vanilla GJK. The acceleration is especially significative for scenarios important in physics simulations: when the objects of a collision pair are in proximity or in shallow interpenetration. (Left) Timings. (Right) Number of iterations.
+        </h4>
+        <div class="header">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h3>Abstract</h3>
+            <p style="font-size:16px">
+            Collision detection between two convex shapes is an essential feature of any physics engine or robot motion planner. It has often been tackled as a computational geometry problem, with the Gilbert, Johnson and Keerthi (GJK) algorithm being the most common approach today. In this work we leverage the fact that collision detection is fundamentally a convex optimization problem. In particular, we establish that the GJK algorithm is a specific sub-case of the well-established Frank-Wolfe (FW) algorithm in convex optimization. We introduce a new collision detection algorithm by adapting recent works linking Nesterov acceleration and Frank-Wolfe methods. We benchmark the proposed accelerated collision detection method on two datasets composed of strictly convex and non-strictly convex shapes. Our results show that our approach significantly reduces the number of iterations to solve collision detection problems compared to the state-of-the-art GJK algorithm, leading to up to two times faster computation times. 
+            </p>
+        </div>
+
+        <!-- <div class="row"> -->
+        <!--     <h3>Approach overview</h3> -->
+        <!--     <center> -->
+        <!--         <img class="img-responsive"  src="images/method_overview.png" title="RoboPose"/> -->
+        <!--     </center> -->
+        <!--     <h4> -->
+        <!--         <b> RoboPose overview. </b> Given a single input RGB image, the state S (6D camera-to-robot pose and joint angles) of the robot is iteratively updated using renderer and refiner modules to match the input image. The refinement module takes as input the cropped observed image and a rendering of the robot as well as the mask of an anchor part. The anchor part is used for updating the rigid 6D pose of the robot while the rest of the parts are updated by changing their joint angles. Note that the anchor part is changing across iterations making the refinement more robust. -->
+        <!--     </h4> -->
+        <!--     <p style="font-size:16px"> -->
+        <!--     </p> -->
+        <!-- </div> -->
+        <!---->
+        <!-- <div class="row"> -->
+        <!--     <h3>Qualtitative results</h3> -->
+        <!--     <center> -->
+        <!--         <img class="img-responsive"  src="images/qualitative_results.png" title="RoboPose"/> -->
+        <!--     </center> -->
+        <!--     Please also see the <a href="https://youtu.be/3yzwS99sgLI">Supplementary video</a>. -->
+        <!-- </div> -->
+
+        <div class="row">
+            <h3>Paper</h3>
+	          <p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="https://arxiv.org/abs/2205.09663"><img style="box-shadow: 5px 5px 2px #888888; margin:10px" src="images/paper.png" width="170px"></a>
+                            </td>
+                            <td>
+                                L. Montaut, Q. Le Lidec, V. Petrik, J. Sivic and J. Carpentier<br>
+                                <b> Collision Detection Accelerated: An Optimization Perspective </b> <br>
+                                <i> Robotics: Science and Systems, 2022 </i> <br>
+                                [<a href="https://arxiv.org/abs/2205.09663">Paper on arXiv</a>] <br>
+                                <h4>BibTeX</h4>
+                                <pre>
+@inproceedings{montaut2022GJKNesterov,
+  title = {Collision Detection Accelerated: An Optimization Perspective},
+  author = {Montaut, Louis and Le Lidec, Quentin and Petrik, Vladimir and Sivic, Josef and Carpentier, Justin},
+  booktitle = {Robotics: Science and Systems},
+  year = {2022}
+}
+</pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+
+
+      <div class="row">
+        <h3>Acknowledgements</h3>
+        <p style="font-size:16px">
+This work was partly supported by the European Regional Development Fund under the project IMPACT (reg. no. CZ.02.1.01/0.0/0.0/15 003/0000468), by the French government under management of Agence Nationale de la Recherche as part of the “Investissements d’avenir” program, reference ANR-19-P3IA-0001 (PRAIRIE 3IA Institute) and the Louis Vuitton ENS Chair on Artificial Intelligence.
+        </p>
+      </div>
+
+      <div class="row">
+        <h3>Copyright Notice</h3>
+        <p style="font-size:16px">
+            The documents contained in these directories are included by the contributing authors
+            as a means to ensure timely dissemination of scholarly and technical work on a non-commercial basis.
+            Copyright and all rights therein are maintained by the authors or by other copyright holders, notwithstanding that they have offered
+            their works here electronically. It is understood that all persons copying this information will adhere to the terms and constraints
+            invoked by each author's copyright
+            .</p>
+      </div>
+
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>
